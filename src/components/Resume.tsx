@@ -16,6 +16,9 @@ interface ResumeProps {
   onGeneratePDF: () => void;
 }
 
+// Número em formato internacional, apenas dígitos (DDI + DDD + número)
+const PHONE_NUMBER_RAW = "5547998078706";
+
 const Resume: React.FC<ResumeProps> = ({ onGeneratePDF }) => {
   return (
     <div className="max-w-4xl mx-auto bg-white">
@@ -48,10 +51,15 @@ const Resume: React.FC<ResumeProps> = ({ onGeneratePDF }) => {
               <MapPin className="w-5 h-5 text-blue-600" />
               <span>Piên – Paraná</span>
             </div>
-            <div className="flex items-center gap-2">
+            <a
+              href={`https://wa.me/${PHONE_NUMBER_RAW}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 hover:underline focus:underline"
+            >
               <Phone className="w-5 h-5 text-blue-600" />
               <span>(47) 9 9807-8706</span>
-            </div>
+            </a>
             <div className="flex items-center gap-2">
               <Mail className="w-5 h-5 text-blue-600" />
               <span>luiz_roberto2012@hotmail.com</span>
